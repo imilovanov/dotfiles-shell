@@ -1,0 +1,112 @@
+### Colorize the ls output
+alias ls='ls -AlhF --color=auto'
+
+### Use a long listing format
+alias ll='ls -la'
+ 
+### Show hidden files
+alias l.='ls -d .* --color=auto'
+
+### Get rid of command not found
+alias cd..='cd ..'
+ 
+### A quick way to navigate 
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+alias clip='xclip -selection clipboard'
+alias pwdc='pwd | xclip -selection clipboard'
+alias dirtree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
+alias lowercase_files="rename 'y/A-Z/a-z/' *"
+### Xdg-open
+alias open='xdg-open'
+
+### Show open ports
+alias ports='netstat -tulanp'
+
+### Aliases for apt commands
+alias apti='sudo apt-get install'
+alias apts='sudo apt-cache search'
+alias aptu='sudo apt-get update'
+alias aptc='apt-cache policy'
+
+### Pacman aliases
+alias p='sudo pacman'
+
+### Wordpress aliases
+alias wp-generate-secret-keys='curl -s https://api.wordpress.org/secret-key/1.1/salt/'
+
+### Stop after sending count ECHO_REQUEST packets 
+alias ping='ping -c 5'
+
+### Do not wait interval 1 second, go fast 
+alias fastping='ping -c 100 -s.2'
+
+### System commands
+alias 'bit?'='getconf LONG_BIT'
+alias sysenable='sudo systemctl enable'
+alias sysstart='sudo systemctl start'
+alias sysstatus='sudo systemctl status'
+
+### Become root 
+alias root='sudo -i'
+alias su='sudo -i'
+
+### Reboot / halt / poweroff
+alias reboot='sudo /sbin/reboot'
+alias poweroff='sudo /sbin/poweroff'
+alias halt='sudo /sbin/halt'
+alias shutdown='sudo /sbin/shutdown'
+alias shutdown_timer='sudo shutdown -P'
+
+### Grep
+alias g="grep -i"
+
+### Vim
+alias v='vim'
+alias sv='sudo vim'
+alias svim='sudo vim'
+
+### Processes
+alias ka='killall'
+alias 'ps?'='ps ax | grep '
+
+### History
+alias hs='history | grep'
+
+### IP
+alias myip="curl http://ipecho.net/plain; echo"
+
+### Tar
+alias untar='tar -zxvf'
+
+### Python aliases
+alias pmk='python -m keyring'
+
+### Apache server aliases
+alias apache restart='sudo service apache2 restart'
+alias apache status='sudo service apache2 status'
+
+### PHP
+alias phpl='sudo php -S localhost:'
+
+### NPM
+alias npmi='sudo npm install'
+alias npmgi='sudo npm install -g'
+alias npmdi='sudo npm install --save-dev'
+
+### Ruby
+alias gemi='sudo gem install'
+alias gemu='sudo gem update'
+
+### Internet
+alias yt="youtube-dl --add-metadata -i" # Download video link
+alias yta="yt -x -f bestaudio/best"     # Download only audio
+
+### Curl
+
+### Docker
+alias docker_status='sudo systemctl status docker'
