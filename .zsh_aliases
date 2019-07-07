@@ -1,16 +1,29 @@
-### Colorize the ls output
+## Colorize the ls output
 alias ls='ls -AlhF --color=auto'
 
-### Use a long listing format
+## Use a long listing format
 alias ll='ls -la'
- 
-### Show hidden files
+
+## Show hidden files
 alias l.='ls -d .* --color=auto'
 
-### Get rid of command not found
+## fzf
+alias fzf='fzf -m'
+alias fbr='fzf-tmux'
+alias lsf='ls | fzf'
+
+## Extract (ZSH plugin)
+alias x='extract'
+
+## ZSH aliases
+alias src='source ~/.zshrc'
+
+## Get rid of command not found
 alias cd..='cd ..'
  
-### A quick way to navigate 
+## A quick way to navigate 
+alias ,,='cd +1'
+alias ,.='cd -1'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -21,92 +34,144 @@ alias clip='xclip -selection clipboard'
 alias pwdc='pwd | xclip -selection clipboard'
 alias dirtree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
 alias lowercase_files="rename 'y/A-Z/a-z/' *"
-### Xdg-open
+
+## Git
+alias git='hub'
+
+## Xdg-open
 alias open='xdg-open'
 
-### Show open ports
+## Show open ports
 alias ports='netstat -tulanp'
 
-### Aliases for apt commands
+## Aliases for apt commands
 alias apti='sudo apt-get install'
 alias apts='sudo apt-cache search'
 alias aptu='sudo apt-get update'
 alias aptc='apt-cache policy'
+alias aptuu='sudo apt-get update && sudo apt-get upgrade'
+alias aptk='sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys'
 
-### Pacman aliases
+## Pacman aliases
 alias p='sudo pacman'
+alias pss='sudo pacman -Ss'
+alias pssg='sudo pacman -Ss | grep'
+alias y='yaourt'
+alias p_u='sudo pacman -U'
 
-### Wordpress aliases
+## Wordpress aliases
 alias wp-generate-secret-keys='curl -s https://api.wordpress.org/secret-key/1.1/salt/'
 
-### Stop after sending count ECHO_REQUEST packets 
+## Stop after sending count ECHO_REQUEST packets 
 alias ping='ping -c 5'
 
-### Do not wait interval 1 second, go fast 
+## Do not wait interval 1 second, go fast 
 alias fastping='ping -c 100 -s.2'
 
-### System commands
+## System commands
 alias 'bit?'='getconf LONG_BIT'
 alias sysenable='sudo systemctl enable'
 alias sysstart='sudo systemctl start'
 alias sysstatus='sudo systemctl status'
+alias sysrestart='sudo systemctl restart'
+alias updb='sudo updatedb'
+alias serv='sudo service'
+alias servstart='sudo service start'
+alias servrestart='sudo service restart'
+alias servstatus='sudo service status'
+alias servenable='sudo service enable'
 
-### Become root 
+## Become root 
 alias root='sudo -i'
 alias su='sudo -i'
 
-### Reboot / halt / poweroff
+## Reboot / halt / poweroff
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
 alias halt='sudo /sbin/halt'
+alias sleep='sudo systemctl suspend'
 alias shutdown='sudo /sbin/shutdown'
 alias shutdown_timer='sudo shutdown -P'
 
-### Grep
+## Grep
 alias g="grep -i"
+alias lg='ls -la | grep'
+alias gr="grep"
 
-### Vim
+## Vim
 alias v='vim'
 alias sv='sudo vim'
 alias svim='sudo vim'
 
-### Processes
+## Processes
 alias ka='killall'
 alias 'ps?'='ps ax | grep '
 
-### History
+## History
 alias hs='history | grep'
 
-### IP
+## IP
 alias myip="curl http://ipecho.net/plain; echo"
 
-### Tar
+## Tar
 alias untar='tar -zxvf'
 
-### Python aliases
+## Python aliases
 alias pmk='python -m keyring'
+alias pms='python -m SimpleHTTPServer'
 
-### Apache server aliases
-alias apache restart='sudo service apache2 restart'
-alias apache status='sudo service apache2 status'
+## Apache server aliases
+alias apache2 restart='sudo service apache2 restart'
+alias apache2 status='sudo service apache2 status'
 
-### PHP
+## PHP
 alias phpl='sudo php -S localhost:'
 
-### NPM
+## NPM
 alias npmi='sudo npm install'
 alias npmgi='sudo npm install -g'
 alias npmdi='sudo npm install --save-dev'
 
-### Ruby
+## Ruby
 alias gemi='sudo gem install'
 alias gemu='sudo gem update'
 
-### Internet
+## Internet
 alias yt="youtube-dl --add-metadata -i" # Download video link
 alias yta="yt -x -f bestaudio/best"     # Download only audio
 
-### Curl
+## Curl
 
-### Docker
-alias docker_status='sudo systemctl status docker'
+## Clang-format
+alias clangf='clang-format -i -style=google'
+alias clangfo='clang-format -style=google'
+
+## Docker
+alias dock='sudo docker'
+alias dockp='sudo docker pull'
+alias dockc='sudo docker create'
+alias dockr='sudo docker run'
+alias docki='sudo docker info'
+alias dockk='sudo docker kill'
+alias docks='sudo docker stop'
+alias dockli='sudo docker images'
+alias dockstatus='sudo systemctl status docker'
+
+## SUID
+alias suid='find / -perm -u=s -type f 2>/dev/null | ls -al'
+
+## SSH
+alias sshkeygen='ssh-keygen -t rsa'
+
+## Chmod
+alias chmod='sudo chmod'
+alias chm='sudo chmod'
+alias chmx='sudo chmod +x'
+alias chmr='sudo chmod -R'
+
+## Nmap
+alias nmapv='nmap -sC -sV'
+alias nmapo='nmap -sC -sV -oA'
+
+## Cyberchef
+alias chef='o ~/.local/bin/cyberchef.htm'

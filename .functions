@@ -1,0 +1,80 @@
+#!/usr/bin/env zsh
+
+# FUNCTIONS
+function urldecode { 
+	printf $(echo -n $1 | sed 's/\\/\\\\/g;s/\(%\)\([0-9a-fA-F][0-9a-fA-F]\)/\\x\2/g'); 
+}
+	
+#function urlencode { 
+#	python -c "import sys, urllib2; print urllib2.quote_plus('$1')"; 
+#}
+
+function de_trans { 
+	trans :de "$1" -b | xclip -selection clipboard; 
+}       
+
+function last_ip { 
+	cat access.log | awk '{print $1}' | sort | uniq -c | sort
+ -nr | awk '{printf "%-8s ==> %s\n", $2, $1}' | head -10; 
+}                 
+
+function mkd { 
+	mkdir $1 && cd $_; 
+}                                     
+
+function weather { 
+	curl wttr.in/$1; 
+}                                       
+
+function find_larger { 
+	find / -type f -size +$1;
+} 
+
+function wget_untar { 
+	wget -qO - "$1" | tar zxvf -;
+}
+
+# wget .gif,.jpg http://example.com/images
+function wget_files { 
+	wget -r -l1 --no-parent -nH -nd ‐U Mozilla -P/tmp -A"$1" $2; 
+} 
+
+function wget_howold { 
+	wget -S --spider $1 2>&1 | grep Mod 
+}               
+
+# download entire site
+function wget_site { 
+	wget --randoVm-wait -r -p -e robots=off -U mozilla $1 
+}  
+
+function down4me { 
+	wget -qO - "http://www.downforeveryoneorjustme.com/$1" | sed '/just you/!d;s/<[^>]*>//g';
+}                       
+
+function lorem { 
+	echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id feugiat lorem, ut auctor risus. Praesent dapibus sc    elerisque quam, a mollis elit mollis sed. Suspendisse nec urna a ante elementum vulputate. Nullam auctor pharetra le    ctus, eu semper enim sollicitudin et. Quisque tempus risus sed tortor pharetra consectetur. Proin tincidunt magna ma    ssa, quis interdum sem dictum ac. Curabitur eu sagittis eros, sit amet tincidunt lectus. Suspendisse neque nibh, lob    ortis ut ipsum eget, imperdiet tempor mi. Nulla iaculis aliquam ante, et consectetur leo posuere ut. Sed vel est ali    quet, accumsan lacus in, blandit orci.
+
+Vestibulum ac rutrum tellus. Maecenas ultricies eu massa non consectetur. Vestibulum ullamcorper varius eros, in con    sectetur ante bibendum et. Proin facilisis bibendum magna. Etiam sem augue, facilisis nec vestibulum eget, dignissim     id est. Phasellus sit amet faucibus libero, eget mattis leo. Proin fringilla, arcu in ullamcorper molestie, nibh er    os pellentesque nibh, et auctor ligula ex non mi. In eget ante euismod, varius nisl at, scelerisque ante. Pellentesq    ue habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent ut urna accumsan, pulvi    nar nunc et, mattis sapien.";
+}
+
+### grep
+function cg { cat $1 | grep $2; }
+
+### pacman
+
+### bat
+function fdb { fd $1 -X bat; }
+
+### fzf
+function fzfw { (cat $1 | fzf -m) > $2; }
+function fbrw { (cat $1 | fbr -m) > $2; }
+
+
+# `o` with no arguments opens the current directory, otherwise opens the given
+function o() {					     
+	if [ $# -eq 0 ]; then
+		open .;
+  	else                                                                                		open "$@";
+	fi;
+}
