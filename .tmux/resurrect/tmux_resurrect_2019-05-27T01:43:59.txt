@@ -1,0 +1,11 @@
+pane	dev	1	:polybar	0	:	1	:/home/dev/.config/polybar	1	polybar	:polybar -c config.grey main
+pane	dev	2	:zsh	0	:	1	:/home/dev/.config/polybar	1	zsh	:
+pane	dev	3	:zsh	0	:	1	:/home/dev/.config	1	zsh	:
+pane	dev	4	:zsh	0	:-	1	:/home/dev/.mozilla/firefox/imabs_dark.default	1	zsh	:
+pane	dev	5	:zsh	1	:*	1	:/home/dev	1	zsh	:
+window	dev	1	0	:	bafd,189x52,0,0,0
+window	dev	2	0	:	bafe,189x52,0,0,1
+window	dev	3	0	:	baff,189x52,0,0,2
+window	dev	4	0	:-	bb00,189x52,0,0,3
+window	dev	5	1	:*	bb01,189x52,0,0,4
+state	dev	

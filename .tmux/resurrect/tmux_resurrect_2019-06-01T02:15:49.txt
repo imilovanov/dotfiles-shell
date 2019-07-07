@@ -1,0 +1,11 @@
+pane	dev	1	:python	0	:#	1	:/home/dev/Downloads	1	python	:/usr/bin/python -O /sbin/ranger
+pane	dev	2	:zsh	0	:	1	:/home/dev/.config/ranger	1	zsh	:
+pane	dev	3	:zsh	0	:	1	:/home/dev/Work/private-notes/notes/notes	1	zsh	:
+pane	dev	4	:zsh	0	:-	1	:/home/dev/Work/private-notes/notes/notes	1	zsh	:
+pane	dev	5	:zsh	1	:*	1	:/home/dev	1	zsh	:
+window	dev	1	0	:#	befd,189x53,0,0,0
+window	dev	2	0	:	befe,189x53,0,0,1
+window	dev	3	0	:	beff,189x53,0,0,2
+window	dev	4	0	:-	bf00,189x53,0,0,3
+window	dev	5	1	:*	bf01,189x53,0,0,4
+state	dev	

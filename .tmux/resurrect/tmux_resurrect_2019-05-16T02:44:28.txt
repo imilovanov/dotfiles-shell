@@ -1,0 +1,7 @@
+pane	dev	1	:zsh	0	:	1	:/home/dev/.local/bin	1	zsh	:nautilus
+pane	dev	2	:zsh	0	:-	1	:/home/dev	1	zsh	:
+pane	dev	3	:zsh	1	:*	1	:/home/dev/.local/bin	1	zsh	:
+window	dev	1	0	:	c27d,188x54,0,0,0
+window	dev	2	0	:-	c27e,188x54,0,0,1
+window	dev	3	1	:*	c27f,188x54,0,0,2
+state	dev	

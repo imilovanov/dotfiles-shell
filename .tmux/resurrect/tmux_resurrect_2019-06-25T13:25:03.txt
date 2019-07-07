@@ -1,0 +1,5 @@
+pane	dev	1	:zsh	0	:-	1	:/home/dev/.local/bin	1	zsh	:
+pane	dev	2	:zsh	1	:*	1	:/home/dev/.local/bin	1	zsh	:
+window	dev	1	0	:-	ae5f,80x23,0,0,2
+window	dev	2	1	:*	b85e,84x25,0,0,1
+state	dev	

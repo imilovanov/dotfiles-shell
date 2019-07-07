@@ -1,0 +1,11 @@
+pane	dev	1	:zsh	0	:	1	:/home/dev/.local/bin/jar/configs	1	zsh	:
+pane	dev	2	:zsh	0	:	1	:/home/dev	1	zsh	:
+pane	dev	3	:zsh	0	:-	1	:/home/dev/IdeaProjects/testproject1/src/test/java	1	zsh	:
+pane	dev	4	:zsh	1	:*	1	:/home/dev	1	zsh	:
+pane	dev	5	:zsh	0	:	1	:/home/dev/Work/private-notes/dotfiles-termux	1	zsh	:
+window	dev	1	0	:	b0bd,152x41,0,0,0
+window	dev	2	0	:	b0be,152x41,0,0,1
+window	dev	3	0	:-	b0bf,152x41,0,0,2
+window	dev	4	1	:*	b0c0,152x41,0,0,3
+window	dev	5	0	:	b0c1,152x41,0,0,4
+state	dev	
